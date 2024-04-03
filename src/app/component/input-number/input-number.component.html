@@ -1,0 +1,21 @@
+<div class="flex flex-wrap gap-3 p-fluid">
+  <div class="flex-auto">
+    <label class="font-bold block mb-2" for="integeronly">Integer Only</label>
+    <p-inputNumber inputId="integeronly" [(ngModel)]="value1"> </p-inputNumber>
+  </div>
+  <div class="flex-auto">
+    <label class="font-bold block mb-2" for="percent">Percent</label>
+    <p-inputNumber [(ngModel)]="value2" inputId="percent" prefix="%">
+    </p-inputNumber>
+  </div>
+  <div class="flex-auto">
+    <label class="font-bold block mb-2" for="expiry">Expiry</label>
+    <p-inputNumber
+      [(ngModel)]="value3"
+      inputId="expiry"
+      prefix="Expires in "
+      suffix=" days"
+    >
+    </p-inputNumber>
+  </div>
+</div>

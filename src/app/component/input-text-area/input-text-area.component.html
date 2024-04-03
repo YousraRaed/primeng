@@ -1,0 +1,19 @@
+<div class="flex flex-row flex-wrap">
+  <div class="m-2">
+    <textarea rows="5" cols="30" pInputTextarea [autoResize]="true"></textarea>
+  </div>
+
+  <div class="m-2">
+    <textarea
+      rows="5"
+      cols="30"
+      pInputTextarea
+      [(ngModel)]="value"
+      class="ng-invalid ng-dirty"
+    ></textarea>
+  </div>
+
+  <div class="m-2">
+    <textarea rows="5" cols="30" pInputTextarea [disabled]="true"></textarea>
+  </div>
+</div>

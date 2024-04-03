@@ -1,0 +1,28 @@
+<div class="flex justify-content-center">
+  <p-rating [(ngModel)]="valueSimple"></p-rating>
+</div>
+<div class="flex justify-content-center mt-4">
+  <p-rating [(ngModel)]="value" [stars]="starValue">
+    <ng-template pTemplate="cancelicon">
+      <img
+        src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png"
+        width="25px"
+        height="25px"
+      />
+    </ng-template>
+    <ng-template pTemplate="onicon">
+      <img
+        src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png"
+        width="25px"
+        height="25px"
+      />
+    </ng-template>
+    <ng-template pTemplate="officon">
+      <img
+        src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png"
+        width="25px"
+        height="25px"
+      />
+    </ng-template>
+  </p-rating>
+</div>

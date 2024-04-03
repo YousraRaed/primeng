@@ -1,0 +1,39 @@
+<div class="flex flex-row flex-wrap">
+  <div class="m-2">
+    <h5>Basic</h5>
+    <p-autoComplete
+      [(ngModel)]="selectedItem"
+      [suggestions]="suggestions"
+      (completeMethod)="search($event)"
+    ></p-autoComplete>
+  </div>
+  <div class="m-2">
+    <h5>Dropdown</h5>
+    <p-autoComplete
+      [(ngModel)]="selectedCountry"
+      [dropdown]="true"
+      [suggestions]="filteredCountries"
+      (completeMethod)="filterCountry($event)"
+      field="name"
+      placeholder="Search"
+    ></p-autoComplete>
+  </div>
+  <div class="m-2">
+    <h5>Disabled</h5>
+    <p-autoComplete
+      [(ngModel)]="selectedItem"
+      [suggestions]="suggestions"
+      (completeMethod)="search($event)"
+      [disabled]="true"
+    ></p-autoComplete>
+  </div>
+  <div class="m-2">
+    <h5>Invalid</h5>
+    <p-autoComplete
+      [(ngModel)]="selectedItem"
+      [suggestions]="suggestions"
+      class="ng-invalid ng-dirty"
+      (completeMethod)="search($event)"
+    ></p-autoComplete>
+  </div>
+</div>

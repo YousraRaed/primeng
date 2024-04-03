@@ -1,27 +1,113 @@
-# PrimengTemplateDemo
+# Using a PrimeNG Template in Angular Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+This guide outlines the steps to integrate a PrimeNG template into an Angular project.
 
-## Development server
+## Step 1: Install Dependencies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+npm i primeflex
+```
 
-## Code scaffolding
+```
+npm i primeicons
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm i primeng
+```
 
-## Build
+## Step 2: Copy Layout Folder
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Copy the layout folder located under the app directory of your PrimeNG template.
+- Paste it into the app folder of your Angular project.
 
-## Running unit tests
+## Step 3: Copy Assets/Layout Folder
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Copy the layout folder located under the assets directory of your PrimeNG template.
+- Paste it into the assets folder of your Angular project.
 
-## Running end-to-end tests
+## Step 4: Update styles.scss
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Open the styles.scss file in the src folder of your Angular project.
+- Add the following imports at the beginning of the file:
 
-## Further help
+```
+/* PrimeNG */
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeicons/primeicons.css";
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+/* PrimeFlex */
+@import "../node_modules/primeflex/primeflex.scss";
+
+/* Layout Styles */
+@import "assets/layout/styles/layout/layout.scss";
+```
+
+## Step 5: Add Theme Import in index.html
+
+- Open the index.html file in the src folder of your Angular project.
+- Add the following <link> tag inside the <head> section of the file to use a PrimeNG theme (replace theme.css with the desired theme file):
+
+```
+<link rel="stylesheet" type="text/css" href="assets/layout/styles/theme/theme.css">
+```
+
+## Step 6: Import AppLayoutModule
+
+- Add AppLayoutModule to the imports array:
+
+```
+imports: [
+  BrowserModule,
+  AppRoutingModule,
+  AppLayoutModule
+],
+```
+
+- Open your AppModule file (usually app.module.ts).
+- Import AppLayoutModule from the layout folder:
+
+```
+import { AppLayoutModule } from './layout/app.layout.module';
+```
+
+## Step 7: Update Route Configuration
+
+- Open your route configuration file (usually app-routing.module.ts).
+- Update the routes to use AppLayoutComponent as the parent component:
+
+```
+const routes: Routes = [
+  {
+    path: '',
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: MydemopageComponent,
+      },
+      // Add more child routes if needed
+    ],
+  },
+  // Add more routes if needed
+];
+```
+
+Now, your Angular project should be configured to use the PrimeNG template. Make sure to replace theme.css with the appropriate theme file name you want to use from PrimeNG. Also, adjust the route configuration as per your application's requirements.
+
+## Creating Custom Themes
+
+- Previously, users were able to create custom themes using the legacy visual theme editor available at designer.primeng.org. However, this tool is no longer available due to its outdated nature and the challenges associated with maintaining it.
+
+- Instead, users can now utilize the new theme editor provided by PrimeFaces at primefaces.org/designer-jsf. This new theme editor offers an improved experience for creating custom themes.
+
+## Prime Blocks
+
+- PrimeBlocks for Angular consists of copy paste ready UI blocks crafted with PrimeFlex where theming and interactivity is provided by PrimeNG.
+- Documentation for prime Block https://blocks.primeng.org/#/documentation
+
+- All the available blocks
+  https://blocks.primeng.org/#/
+
+- Free blocks
+  https://blocks.primeng.org/#/free

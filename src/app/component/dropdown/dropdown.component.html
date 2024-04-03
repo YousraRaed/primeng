@@ -1,0 +1,30 @@
+<div class="flex flex-row flex-wrap">
+  <div class="m-2">
+    <p-dropdown
+      [options]="cities"
+      [(ngModel)]="selectedCity"
+      optionLabel="name"
+      [showClear]="true"
+      placeholder="Select a City"
+    ></p-dropdown>
+  </div>
+  <div class="m-2">
+    <p-dropdown
+      [options]="cities"
+      [(ngModel)]="selectedCity"
+      placeholder="Select a City"
+      optionLabel="name"
+      [disabled]="true"
+    ></p-dropdown>
+  </div>
+  <div class="m-2">
+    <p-dropdown
+      [options]="cities"
+      [(ngModel)]="selectedCity"
+      optionLabel="name"
+      [showClear]="true"
+      placeholder="Select a City"
+      class="ng-dirty ng-invalid"
+    ></p-dropdown>
+  </div>
+</div>

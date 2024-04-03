@@ -1,0 +1,16 @@
+<div class="flex flex-row flex-wrap">
+  <div class="m-2">
+    <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+  </div>
+
+  <div class="m-2">
+    <p-inputSwitch [(ngModel)]="checked" [disabled]="true"></p-inputSwitch>
+  </div>
+
+  <div class="m-2">
+    <p-inputSwitch
+      [(ngModel)]="checked"
+      class="ng-dirty ng-invalid"
+    ></p-inputSwitch>
+  </div>
+</div>

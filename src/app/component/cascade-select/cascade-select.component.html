@@ -1,0 +1,32 @@
+<div class="flex flex-row flex-wrap">
+  <div class="m-2">
+    <p-cascadeSelect
+      [(ngModel)]="selectedCity"
+      [options]="countries"
+      optionLabel="cname"
+      optionGroupLabel="name"
+      [optionGroupChildren]="['states', 'cities']"
+      [style]="{ minWidth: '14rem' }"
+      placeholder="Select a City"
+    ></p-cascadeSelect>
+  </div>
+  <div class="m-2">
+    <p-cascadeSelect
+      class="ng-invalid ng-dirty"
+      [(ngModel)]="selectedCity"
+      [options]="countries"
+      optionLabel="cname"
+      optionGroupLabel="name"
+      [optionGroupChildren]="['states', 'cities']"
+      [style]="{ minWidth: '14rem' }"
+      placeholder="Select a City"
+    ></p-cascadeSelect>
+  </div>
+  <div class="m-2">
+    <p-cascadeSelect
+      [disabled]="true"
+      placeholder="Disabled"
+      [style]="{ minWidth: '14rem' }"
+    ></p-cascadeSelect>
+  </div>
+</div>

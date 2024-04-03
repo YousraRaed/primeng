@@ -1,0 +1,28 @@
+<div class="flex flex-row flex-wrap">
+  <div class="m-2">
+    <p-multiSelect
+      [options]="cities"
+      [(ngModel)]="selectedCities"
+      optionLabel="name"
+      placeholder="Select Cities"
+    ></p-multiSelect>
+  </div>
+  <div class="m-2">
+    <p-multiSelect
+      [options]="cities"
+      [(ngModel)]="selectedCities"
+      class="ng-dirty ng-invalid"
+      optionLabel="name"
+      placeholder="Select Cities"
+    ></p-multiSelect>
+  </div>
+  <div class="m-2">
+    <p-multiSelect
+      [options]="cities"
+      [(ngModel)]="selectedCities"
+      [disabled]="true"
+      optionLabel="name"
+      placeholder="Select Cities"
+    ></p-multiSelect>
+  </div>
+</div>
